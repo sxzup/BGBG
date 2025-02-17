@@ -1,0 +1,33 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # 使用 v2 版本
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2  # 使用 v2 版本
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3  # 這個版本是最新的
+
+      - name: Build APK
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2  # 使用 v2 版本
+        with:
+          name: BingoBingoApp
+          path: app/build/outputs/apk/debug/app-debug.apk
