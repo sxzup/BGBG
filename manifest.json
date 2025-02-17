@@ -1,0 +1,16 @@
+{
+  "name": "Bingo Bingo 預測系統",
+  "short_name": "Bingo 預測",
+  "description": "Bingo Bingo 開獎數據預測",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007BFF",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
